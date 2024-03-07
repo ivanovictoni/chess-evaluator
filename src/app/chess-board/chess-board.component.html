@@ -1,0 +1,11 @@
+<div class="main">
+    <div id="myBoard" style="width: 400px;"></div>
+    <div class="userInput" id="userInput">
+        <label for="gameInput">Inport option: </label>
+        <select name="gameInput" id="gameInput" (change)="handleUserInput()">
+            <option value="pgn" selected>PGN</option>
+            <option value="chess-com">Chess.com</option>
+        </select>
+        <button type="button" id="btnAnalyse" (click)="analyseGame()">Analyse the game!</button>
+    </div>
+</div>

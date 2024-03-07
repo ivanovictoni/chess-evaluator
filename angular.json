@@ -42,7 +42,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/chess-evaluator",
+            "outputPath": "/server/frontend/dist/chess-evaluator/",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -55,12 +55,21 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/@chrisoakman/chessboard2/dist/chessboard2.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/@chrisoakman/chessboard2/dist/chessboard2.min.js"
+            ]
           },
           "configurations": {
             "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
               "budgets": [
                 {
                   "type": "initial",
@@ -115,9 +124,12 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/@chrisoakman/chessboard2/dist/chessboard2.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/@chrisoakman/chessboard2/dist/chessboard2.min.js"
+            ]
           }
         }
       }
