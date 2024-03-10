@@ -1,0 +1,9 @@
+<div>
+    <button type="button" (click)="navigateToPreviousPage()" [disabled]="currentPageIndex === archivedGames.length - 1">Previous Month</button>
+    <span *ngIf="archivedGames.length !== 0">{{ getDate(archivedGames[currentPageIndex]) }}</span>
+    <span *ngIf="archivedGames.length === 0">{{message}}</span>
+    <button type="button" (click)="navigateToNextPage()" [disabled]="currentPageIndex === 0">Next Month</button>
+</div>
+
+<div id="gamesContainer"></div>
+  
